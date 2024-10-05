@@ -3,87 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monument Info</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        input[type="text"] {
-            width: 80%;
-            padding: 10px;
-            margin-top: 20px;
-            font-size: 18px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #2196F3;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #1976D2;
-        }
-
-        #monumentDetails {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            text-align: left;
-            font-size: 16px;
-            color: #333;
-            display: none;
-        }
-    </style>
+    <title>Monument Information</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <h1>Monument Info</h1>
-    <input type="text" id="monumentName" placeholder="Enter Monument Name">
-    <button onclick="getMonumentDetails()">Get Details</button>
+    <h1>Find Monument Information</h1>
 
-    <div id="monumentDetails"></div>
+    <div class="container">
+        <input type="text" id="monumentName" placeholder="Enter monument name">
+        <button id="searchButton">Search</button>
+    </div>
 
-    <script>
-        // Dictionary to store details of monuments
-        const monuments = {
-            "Taj Mahal": "The Taj Mahal, located in Agra, India, is a UNESCO World Heritage Site. It was commissioned in 1632 by the Mughal emperor Shah Jahan to house the tomb of his favorite wife, Mumtaz Mahal.",
-            "Eiffel Tower": "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It was named after the engineer Gustave Eiffel, whose company designed and built the tower.",
-            "Great Wall of China": "The Great Wall of China is a series of fortifications that were built across the northern borders of ancient Chinese states to protect against various nomadic groups."
-            // Add more monuments as needed
-        };
+    <div id="monumentDetails" class="monument-details">
+        <!-- Monument details will be displayed here -->
+    </div>
 
-        function getMonumentDetails() {
-            const monumentName = document.getElementById("monumentName").value;
-            const detailsDiv = document.getElementById("monumentDetails");
-
-            if (monuments[monumentName]) {
-                detailsDiv.innerHTML = monuments[monumentName];
-                detailsDiv.style.display = "block";
-            } else {
-                detailsDiv.innerHTML = "Monument not found. Please try another one.";
-                detailsDiv.style.display = "block";
-            }
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
