@@ -41,9 +41,14 @@
 
   <script>
     async function getMonumentInfo() {
-      const monument = document.getElementById("monumentName").value;
+      const monument = document.getElementById("monumentName").value.trim();
       const resultDiv = document.getElementById("result");
       resultDiv.innerHTML = "Loading...";
+
+      if (!monument) {
+        resultDiv.innerHTML = "Please enter a monument name.";
+        return;
+      }
 
       const keywords = ["fort", "temple", "palace", "tomb", "monument", "mosque", "museum"];
       const isHistorical = keywords.some(keyword =>
@@ -70,6 +75,7 @@
         }
       } catch (error) {
         resultDiv.innerHTML = "Error fetching data. Please try again later.";
+        console.error(error);
       }
     }
   </script>
